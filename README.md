@@ -1,0 +1,1 @@
+i made change to my index.html , services.html, contact.html , reservations.html and about.html
