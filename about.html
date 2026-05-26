@@ -1,51 +1,85 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> About Us - Sindi's Glamour Studio </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about the history, mission and team behind Sindi's Glamour Studio.">
+  <title>About Us – Sindi's Glamour Studio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!--Header-->
-    <header>
-        <h1>About Us - Sindi's Glamour Studio</h1>
-    </header>
-    <!-- The  the logo and navigation menu which will be added to all the pages -->
- 
-    <img src="Logo.png" alt="Sindi's Glamour Studio Logo">
+
+  <header>
+    <a href="index.html" class="header-logo-link">
+      <img src="Logo.png" alt="Sindi's Glamour Studio Logo" class="logo-img">
+    </a>
     <nav>
-           <a href="index.html"> Home page </a>
-           <a href="About.html"> About Us </a>
-           <a href="Services.html"> Services </a>
-           <a href="Reservation.html"> Book now </a>
-           <a href="Contact.html"> Contact Us </a>
-        </ul>
+      <a href="index.html">Home</a>
+      <a href="Services.html">Services</a>
+      <a href="Reservation.html">Book Now</a>
+      <a href="About.html" class="active">About Us</a>
+      <a href="Contact.html">Contact Us</a>
     </nav>
- 
- <!-- The main section includes the content specific to the about us page, such as the history, mission statement, vision statement, and team members of Sindi's Glamour Studio -->
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <p class="section-label">Our Story</p>
+      <h1>About Us</h1>
+      <div class="gold-line"></div>
+      <p>Discover the passion and dedication behind Sindi's Glamour Studio.</p>
+    </div>
+
     <section id="AboutUs">
-        <h2>About Us</h2>
-        <img src="hair 2.jpg" alt="hairstyle" style="width:300px;height: 300px;">
-        <img src="nails 2.png" alt="Nail Design" style="width:300px; height: 300px;">
-        
-        <h3>BRIEF HISTORY</h3>
-        <p>Sindi's glamour studio was launched when the owner was learning more about modern beauty standards. It started as a nail bar, but it grew more into a hair and nail studio.</p>
-        
-        <h3>MISSION STATEMENT</h3>
-        <p>Sindi's glamour studio aims to make clients feel great about themselves, enhance one's confidence and make clients feel free to communicate their dissatisfactions.</p>
-        
-        <h3>VISION STATEMENT</h3>
-        <p>SGS vision is to grow more and not only offer service to female but also become a unisex studio where male haircuts are provided. SGS aims to sell hair products in the future.</p>
-        
-        <h3>Team Members/ Staff</h3>
-        <p>Our team of skilled professionals is dedicated to providing exceptional beauty services and creating a welcoming environment for all clients.</p>
+      <div class="img-grid" style="margin-bottom:3rem;">
+        <img src="images/hair_2.jpg"     alt="Goddess Boho Braids">
+        <img src="images/sgs_nail_3.jpg" alt="Nail Design">
+        <img src="images/hair_1.jpg"     alt="Braided Ponytail">
+      </div>
+
+      <div class="about-block">
+        <h3>Brief History</h3>
+        <p>Sindi's Glamour Studio was launched when the owner was learning more about modern beauty standards
+           and recognised a need for a premium, welcoming space where clients could feel truly pampered.
+           What began as a passion for beauty has grown into a thriving studio dedicated to enhancing the
+           natural beauty of every client who walks through our doors.</p>
+      </div>
+
+      <div class="about-block">
+        <h3>Mission Statement</h3>
+        <p>Sindi's Glamour Studio aims to make clients feel great about themselves, enhance one's confidence,
+           and provide an exceptional beauty experience in a warm and welcoming environment. We believe that
+           every person deserves to feel beautiful, and we are committed to making that a reality.</p>
+      </div>
+
+      <div class="about-block">
+        <h3>Vision Statement</h3>
+        <p>SGS's vision is to grow more and not only offer services to female clients, but also become a
+           unisex studio that caters to all. We aspire to be the leading beauty destination in Pretoria,
+           known for our quality, creativity and commitment to client satisfaction.</p>
+      </div>
+
+      <div class="team-block">
+        <p class="section-label" style="text-align:center;">Our People</p>
+        <h3 style="color:var(--hot-pink); margin-bottom:1rem;">Team Members &amp; Staff</h3>
+        <div class="gold-line"></div>
+        <p>Our team of skilled professionals is dedicated to providing exceptional beauty services and creating
+           a memorable experience for every client. Each member of our team brings unique expertise and a
+           genuine passion for beauty, ensuring that you always leave the studio feeling your absolute best.</p>
+      </div>
     </section>
-    <footer>
-        <p>&copy; 2026 Sindi's Glamour Studio. All rights reserved.</p>
-        <ul>
-          <li><a href="#privacy">Privacy Policy</a></li>
-          <li><a href="#terms">Terms of Service</a></li>
-        </ul>
- </footer>
+  </main>
+
+  <footer>
+    <img src="images/Logo.png" alt="Sindi's Glamour Studio" class="footer-logo">
+    <p class="footer-brand">Sindi's Glamour Studio</p>
+    <hr>
+    <p>&copy; 2026 Sindi's Glamour Studio. All rights reserved.</p>
+    <ul>
+      <li><a href="#privacy">Privacy Policy</a></li>
+      <li><a href="#terms">Terms of Service</a></li>
+    </ul>
+  </footer>
+
 </body>
 </html>
