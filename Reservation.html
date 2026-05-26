@@ -1,80 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Reservation - Sindi's Glamour Studio </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book your appointment at Sindi's Glamour Studio – select your service and preferred date.">
+  <title>Reservation – Sindi's Glamour Studio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!--Header-->
- <header>
-    <h1>Reserve at Sindi's Glamour Studio</h1>
- </header>
-    <!-- The logo and navigation menu which will be added to all the pages -->
-  
-    <img src="Logo.png" alt="Sindi's Glamour Studio Logo">
+
+  <header>
+    <a href="index.html" class="header-logo-link">
+      <img src="Logo.png" alt="Sindi's Glamour Studio Logo" class="logo-img">
+    </a>
     <nav>
-           <a href="index.html"> Home page </a>
-           <a href="About.html"> About Us </a>
-           <a href="Services.html"> Services </a>
-           <a href="Reservation.html"> Book now </a>
-           <a href="Contact.html"> Contact Us </a>
+      <a href="index.html">Home</a>
+      <a href="Services.html">Services</a>
+      <a href="Reservation.html" class="active">Book Now</a>
+      <a href="About.html">About Us</a>
+      <a href="Contact.html">Contact Us</a>
     </nav>
-  
-<main>
-    <!-- The reservation section includes a booking form where clients can fill in their details and select the services they want to book. It also includes contact information for clients who prefer to book via phone or email. -->
-<section id="Reservations">
-    <h2> Book Your Appointment </h2>
-    <p>Ready to experience the glamour? Book your appointment today and let us pamper you with our exceptional beauty services. Contact us at 0790457666 or email us at info@sindisglamourstudio.com</p>
-    <p>Alternatively, you can fill out our online booking form on our website to schedule your appointment at your convenience.</p>
-   
-    <p>We look forward to welcoming you to Sindi's Glamour Studio and providing you with an unforgettable beauty experience!</p>
-    <p>Use this form to reserve your service. We will contact you to confirm the date and time.</p>
-    <form action="#" method="post">
-        <label for="full-name">Full Name</label><br>
-        <input type="text" id="full-name" name="full-name" required><br><br>
+  </header>
 
-        <label for="email">Email</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+  <main>
+    <div class="page-hero">
+      <p class="section-label">Online Booking</p>
+      <h1>Book Your Appointment</h1>
+      <div class="gold-line"></div>
+      <p>Ready to experience the glamour? Book your appointment today and let us pamper you with our exceptional services.</p>
+    </div>
 
-        <label for="phone">Phone Number</label><br>
-        <input type="tel" id="phone" name="phone" required><br><br>
+    <section id="Reservations">
+      <p style="max-width:620px; margin:0 auto 1rem; text-align:center;">
+        Alternatively, you can fill out our online booking form on our website to schedule your appointment.
+      </p>
+      <p style="max-width:620px; margin:0 auto 0.5rem; text-align:center;">
+        We look forward to welcoming you to Sindi's Glamour Studio and providing you with an unforgettable beauty experience.
+      </p>
+      <p style="max-width:620px; margin:0 auto 3rem; text-align:center;">
+        Use this form to reserve your service. We will contact you to confirm the date and time.
+      </p>
 
-        <label for="service">Choose a Service</label><br>
-        <select id="service" name="service" required>
-            <option value="">Select a service</option>
-            <option value="goddess-braids">Goddess Braids - R 550</option>
-            <option value="locs">Locs - R 600</option>
-            <option value="straight-up">Straight Up - R 400</option>
-            <option value="twisted-braids">Twisted Braids - R 500</option>
-            <option value="straight-back">Straight Back - R 350</option>
-            <option value="manicure">Manicure - R 180</option>
-            <option value="pedicure">Pedicure - R 180</option>
-            <option value="gel-polish">Gel Polish - R 250</option>
-            <option value="acrylic-nails">Acrylic Nails - R 280</option>
-        </select><br><br>
+      <form action="#" method="post" class="form-section">
+        <div class="form-group">
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" name="full-name" placeholder="Your full name" required>
+        </div>
 
-        <label for="date">Preferred Date</label><br>
-        <input type="date" id="date" name="date" required><br><br>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required>
+        </div>
 
-        <label for="time">Preferred Time</label><br>
-        <input type="time" id="time" name="time" required><br><br>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+27 __ ___ ____" required>
+        </div>
 
-        <label for="notes">Additional Notes</label><br>
-        <textarea id="notes" name="notes" rows="4" placeholder="Tell us any special requests"></textarea><br><br>
+        <div class="form-group">
+          <label for="service">Choose a Service</label>
+          <select id="service" name="service" required>
+            <option value="">— Select a service —</option>
+            <optgroup label="Hair Services">
+              <option value="goddess-braids">Goddess Braids – R 550</option>
+              <option value="locs">Locs – R 600</option>
+              <option value="straight-up">Straight Up – R 400</option>
+              <option value="twisted-braids">Twisted Braids – R 500</option>
+              <option value="straight-back">Straight Back – R 350</option>
+            </optgroup>
+            <optgroup label="Nail Services">
+              <option value="manicure">Manicure – R 180</option>
+              <option value="pedicure">Pedicure – R 180</option>
+              <option value="gel-polish">Gel Polish – R 250</option>
+              <option value="acrylic-nails">Acrylic Nails – R 280</option>
+            </optgroup>
+          </select>
+        </div>
 
-        <button type="submit">Submit Reservation</button>
-    </form>
-</section>
-</main>
-<footer>
-    <!-- The footer section includes copyright information and links to privacy policy and terms of service which will be added to all the pages -->
+        <div class="form-group">
+          <label for="date">Preferred Date</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+
+        <div class="form-group">
+          <label for="time">Preferred Time</label>
+          <input type="time" id="time" name="time" required>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Additional Notes</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Tell us any special requests or preferences…"></textarea>
+        </div>
+
+        <div style="text-align:center; margin-top:2rem;">
+          <button type="submit" class="btn btn-solid" style="font-size:0.75rem; padding:1rem 3rem; border:none; cursor:pointer;">
+            Submit Reservation
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <img src="images/Logo.png" alt="Sindi's Glamour Studio" class="footer-logo">
+    <p class="footer-brand">Sindi's Glamour Studio</p>
+    <hr>
     <p>&copy; 2026 Sindi's Glamour Studio. All rights reserved.</p>
     <ul>
-        <li><a href="#privacy">Privacy Policy</a></li>
-        <li><a href="#terms">Terms of Service</a></li>
-        
+      <li><a href="#privacy">Privacy Policy</a></li>
+      <li><a href="#terms">Terms of Service</a></li>
     </ul>
- </footer>
+  </footer>
+
 </body>
-</html> 
+</html>
