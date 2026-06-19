@@ -1,0 +1,7 @@
+# robots.txt — Sindi's Glamour Studio
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://sindisglamourstudio.co.za/sitemap.xml
