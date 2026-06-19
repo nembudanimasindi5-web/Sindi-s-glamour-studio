@@ -777,12 +777,12 @@ header h1 { display: none; /* logo image used instead */ }
 
 /* ── Footer logo ── */
 footer .footer-logo {
-  width: 180px;
+  width: 140px;
   height: auto;
-  object-fit: contain;
   margin: 0 auto 1rem;
-  display: block;
-
+  opacity: 0.85;
+  filter: brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(175deg);
+  /* turns logo into light-blue tint on dark footer */
 }
 
 @media (max-width: 768px) {
@@ -805,4 +805,609 @@ footer .footer-logo {
 
   .sgs-logo      { width: 130px; }
   .sgs-logo-bg   { width: 130px; height: 70px; }
+}
+
+/* ══════════════════════════════════════════
+   RUBRIC IMPROVEMENTS
+   ══════════════════════════════════════════ */
+
+/* ── 1. DEFAULT STYLE CODE: Consistently apply font-family, font-size, colour scheme ── */
+
+/* Ensure all text elements explicitly inherit the brand font system */
+body, input, select, textarea, button {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text-main);
+}
+
+/* All headings explicitly branded */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--dark);
+}
+
+/* Paragraphs consistent */
+p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* Ensure labels, list items, spans inherit brand font */
+label, li, span, td, th, caption, figcaption, legend {
+  font-family: var(--font-body);
+  color: var(--text-main);
+}
+
+/* Default link colour is consistently hot-pink */
+a {
+  color: var(--hot-pink);
+  font-family: var(--font-body);
+}
+
+/* ── 2. PSEUDO-CLASSES: Comprehensive interactive states ── */
+
+/* Nav links — active state already exists, add :focus */
+nav a:focus {
+  outline: 2px solid var(--sky-blue);
+  outline-offset: 3px;
+  color: var(--hot-pink);
+}
+
+/* Visited nav links */
+nav a:visited {
+  color: var(--text-muted);
+}
+
+/* Buttons — add :focus and :active states */
+.btn:focus {
+  outline: 2px solid var(--hot-pink);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px rgba(240,39,107,0.15);
+}
+
+.btn:active {
+  transform: scale(0.97);
+  box-shadow: none;
+}
+
+.btn-solid:focus {
+  outline: 2px solid var(--pink-dark);
+  outline-offset: 3px;
+}
+
+.btn-blue:focus {
+  outline: 2px solid var(--blue-dark);
+  outline-offset: 3px;
+}
+
+/* Service cards — :focus for keyboard navigation */
+.service-card:focus-within {
+  border-color: var(--hot-pink);
+  box-shadow: var(--shadow);
+}
+
+/* Contact cards — :focus */
+.contact-card:focus-within {
+  border-color: var(--sky-blue);
+  box-shadow: 0 12px 30px rgba(77,184,212,0.25);
+}
+
+/* About blocks — :hover */
+.about-block:hover {
+  border-left-color: var(--hot-pink);
+  box-shadow: 0 4px 20px rgba(240,39,107,0.08);
+  transition: border-left-color var(--transition), box-shadow var(--transition);
+}
+
+/* Footer links — :visited and :active */
+footer ul li a:visited {
+  color: rgba(168,216,232,0.5);
+}
+
+footer ul li a:active {
+  color: var(--light-pink);
+}
+
+footer ul li a:focus {
+  outline: 2px solid var(--sky-blue);
+  outline-offset: 2px;
+}
+
+/* Form inputs — :hover state */
+input:hover, select:hover, textarea:hover {
+  border-color: var(--sky-blue);
+}
+
+/* Input :disabled state */
+input:disabled, select:disabled, textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Links :active state */
+a:active {
+  color: var(--pink-dark);
+}
+
+a:visited {
+  color: var(--hot-pink);
+}
+
+/* Image hover in about/page sections */
+.img-grid img:focus {
+  border-color: var(--hot-pink);
+  outline: none;
+  box-shadow: var(--shadow);
+}
+
+/* Hero images :focus */
+.hero-images img:focus {
+  border-color: var(--hot-pink);
+  outline: none;
+}
+
+/* ── 3. DECORATION & COLOUR: More consistent decorative elements ── */
+
+/* Ensure section labels always get sky-blue */
+.section-label {
+  color: var(--sky-blue);
+}
+
+/* Consistent top accent on contact cards */
+.contact-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--sky-blue), var(--light-blue));
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.contact-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Consistent bottom accent on about-blocks */
+.about-block {
+  position: relative;
+}
+
+.about-block::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--sky-blue), var(--hot-pink));
+  margin-top: 1.2rem;
+  border-radius: 2px;
+}
+
+/* Team block decorative gradient border */
+.team-block {
+  border-top: 3px solid var(--hot-pink);
+}
+
+/* Page hero decorative bottom line */
+.page-hero {
+  border-bottom: 4px solid transparent;
+  border-image: linear-gradient(90deg, var(--sky-blue), var(--hot-pink)) 1;
+}
+
+/* Consistent footer decoration */
+footer .footer-brand {
+  letter-spacing: 0.06em;
+}
+
+/* ── 4. RESPONSIVE LAYOUT: Tablet breakpoint (1024px) + better layout adjustments ── */
+
+@media (max-width: 1024px) {
+  section {
+    padding: 4rem 1.5rem;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .img-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .contact-info {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .form-section {
+    padding: 2.5rem 2rem;
+  }
+}
+
+/* ── 5. RESPONSIVE IMAGES: Improve image adaptation at all breakpoints ── */
+
+/* Images always responsive, never overflow */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Hero images responsive at tablet */
+@media (max-width: 1024px) {
+  .hero-images img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+  }
+}
+
+/* Hero images responsive at mobile */
+@media (max-width: 768px) {
+  .hero-images {
+    gap: 0.6rem;
+  }
+
+  .hero-images img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+  }
+
+  .img-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .img-grid img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  /* Stack service grid to 1 col on small screens */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact info stacks */
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+
+  /* Map responsive */
+  .map-container iframe {
+    height: 250px;
+  }
+
+  /* Form section full width */
+  .form-section {
+    padding: 1.5rem 1rem;
+    margin: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  /* Page hero smaller on mobile */
+  .page-hero {
+    padding: 2.5rem 1.2rem 2rem;
+  }
+
+  /* Footer nav wraps nicely */
+  footer ul {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+/* Very small screens (< 400px) */
+@media (max-width: 400px) {
+  .hero-images img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .img-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .img-grid img {
+    height: 220px;
+  }
+
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.4rem; }
+
+  nav {
+    gap: 0.5rem;
+  }
+
+  nav a {
+    font-size: 0.65rem;
+  }
+}
+
+/* ── Gallery section (replaces inline style on index.html) ── */
+.gallery-section {
+  background: var(--blue-pale);
+  max-width: 100%;
+  padding: 5rem 2rem;
+}
+
+.inner-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .gallery-section {
+    padding: 3rem 1.2rem;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   JS-POWERED COMPONENTS
+   ══════════════════════════════════════════════════════════ */
+
+/* ── Mobile nav toggle button ── */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 2px solid var(--hot-pink);
+  color: var(--hot-pink);
+  font-size: 1.4rem;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+  line-height: 1;
+}
+.nav-toggle:hover { background: var(--hot-pink); color: var(--white); }
+
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; align-items: center; justify-content: center; }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: var(--white);
+    border-top: 2px solid var(--light-pink);
+    padding: 1rem 0;
+    gap: 0;
+  }
+  nav.nav-open { display: flex; }
+  nav a {
+    padding: 0.7rem 1.5rem;
+    border-bottom: 1px solid var(--mid);
+    border-bottom-color: var(--hot-pink);
+    width: 100%;
+    text-align: left;
+  }
+  nav a:last-child { border-bottom: none; }
+}
+
+/* ── Scroll reveal animation ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Lightbox ── */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10,0,5,0.93);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  outline: none;
+}
+#lightbox.lb-open { display: flex; }
+
+.lb-img {
+  max-width: 90vw;
+  max-height: 75vh;
+  object-fit: contain;
+  border: 3px solid var(--light-pink);
+  border-radius: var(--radius);
+  box-shadow: 0 0 60px rgba(240,39,107,0.3);
+  animation: fadeUp 0.3s ease;
+}
+
+.lb-caption {
+  color: var(--light-pink);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.lb-close, .lb-prev, .lb-next {
+  position: fixed;
+  background: rgba(240,39,107,0.15);
+  border: 2px solid var(--light-pink);
+  color: var(--white);
+  font-size: 1.8rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+  line-height: 1;
+}
+.lb-close:hover, .lb-prev:hover, .lb-next:hover { background: var(--hot-pink); }
+.lb-close { top: 1rem; right: 1rem; font-size: 1.6rem; }
+.lb-prev  { left: 1rem;  top: 50%; transform: translateY(-50%); }
+.lb-next  { right: 1rem; top: 50%; transform: translateY(-50%); }
+
+/* ── Accordion ── */
+.accordion {
+  border: 2px solid var(--light-pink);
+  border-radius: var(--radius);
+  margin-bottom: 0.8rem;
+  overflow: hidden;
+  transition: box-shadow var(--transition);
+}
+.accordion-open { box-shadow: var(--shadow); }
+.accordion-header {
+  width: 100%;
+  background: var(--white);
+  border: none;
+  padding: 1.1rem 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--dark);
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background var(--transition);
+}
+.accordion-header:hover { background: var(--blue-pale); }
+.accordion-header::after {
+  content: "+";
+  font-size: 1.4rem;
+  color: var(--hot-pink);
+  transition: transform var(--transition);
+}
+.accordion-open .accordion-header::after { transform: rotate(45deg); }
+.accordion-body {
+  padding: 1.2rem 1.5rem;
+  background: var(--bg);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--light-pink);
+  animation: fadeUp 0.3s ease;
+}
+
+/* ── Tabs ── */
+.tab-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--light-pink);
+  flex-wrap: wrap;
+}
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: all var(--transition);
+}
+.tab-btn:hover { color: var(--hot-pink); }
+.tab-btn.tab-active, .tab-btn[aria-selected="true"] {
+  color: var(--hot-pink);
+  border-bottom-color: var(--hot-pink);
+}
+
+/* ── Service search bar ── */
+#service-filter-bar {
+  max-width: 480px;
+  margin: 0 auto 2.5rem;
+  position: relative;
+}
+#service-search {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.8rem;
+  border: 2px solid var(--light-blue);
+  border-radius: 30px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  background: var(--white);
+  transition: border-color var(--transition);
+  outline: none;
+}
+#service-search:focus { border-color: var(--hot-pink); }
+#service-filter-bar::before {
+  content: "🔍";
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+/* ── Price preview pill ── */
+#price-preview {
+  background: var(--blue-pale);
+  border: 2px solid var(--sky-blue);
+  border-radius: 30px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.85rem;
+  color: var(--sky-blue);
+  text-align: center;
+  margin: 0.5rem 0 1rem;
+  animation: fadeUp 0.3s ease;
+}
+
+/* ── Form validation states ── */
+.field-error {
+  display: block;
+  color: var(--hot-pink);
+  font-size: 0.75rem;
+  margin-top: 0.3rem;
+  font-weight: 600;
+  animation: fadeUp 0.2s ease;
+}
+.input-error {
+  border-color: var(--hot-pink) !important;
+  box-shadow: 0 0 0 3px rgba(240,39,107,0.12) !important;
+}
+
+/* ── Reservation & Contact response boxes ── */
+#reservation-response,
+#contact-response {
+  background: linear-gradient(135deg, var(--blue-pale), var(--pink-pale));
+  border: 2px solid var(--sky-blue);
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+  animation: fadeUp 0.5s ease;
+}
+#reservation-response h3,
+#contact-response h3 {
+  color: var(--hot-pink);
+  margin-bottom: 1rem;
+}
+#reservation-response p,
+#contact-response p {
+  color: var(--text-main);
+  font-size: 0.95rem;
 }
