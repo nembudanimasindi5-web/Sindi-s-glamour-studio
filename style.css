@@ -778,11 +778,15 @@ header h1 { display: none; /* logo image used instead */ }
 /* ── Footer logo ── */
 footer .footer-logo {
   width: 140px;
-  height: auto;
+  height: 140px;
+  object-fit: contain;
   margin: 0 auto 1rem;
-  opacity: 0.85;
-  filter: brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(175deg);
-  /* turns logo into light-blue tint on dark footer */
+  border-radius: 50%;
+  background: var(--blue-pale);
+  padding: 8 px;
+  border: 2px solid var(--light-pink);
+  opacity: 0.95;
+ /* turns logo into light-blue tint on dark footer */
 }
 
 @media (max-width: 768px) {
